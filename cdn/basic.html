@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vuejs</title>
+    <style>
+      html,
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- EVENT https://v3.vuejs.org/guide/events.html#listening-to-events -->
+      <img v-on:click="getName" v-bind:src="image" :alt="title" width="100" />
+      <h1>{{title}}</h1>
+      <p>{{description}}</p>
+
+      <p v-on:click="getRandomUsers"><strong>Get Random User</strong></p>
+      <ul>
+        <!-- LIST RENDER: https://v3.vuejs.org/guide/list.html#mapping-an-array-to-elements-with-v-for -->
+        <li v-for="user in users">{{ user.name.first }}</li>
+      </ul>
+    </div>
+
+    <!-- install with CDN https://v3.vuejs.org/guide/installation.html#cdn -->
+    <script src="https://unpkg.com/vue@3.2.26"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
